@@ -1,21 +1,21 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+const express=require('express');
+const bodyParser=require('body-parser');
+const cors=require('cors');
 
-const PORT = 3000;
+const PORT=3000;
 
-const api = require('./routes/api')
-const app = express()
+const api=require('./routes/api')
+const app=express()
 app.use(cors());
 
 app.use(bodyParser.json())
 
-app.use('/api', api);
+app.use('/api',api);
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname + '/dist/ngApp/index.html'))
+    res.sendFile(path.join(__dirname+'/ngApp/dist/index.html'))
 })
 
-app.listen(PORT, () => {
-    console.log('Server running on localhst ' + PORT)
+app.listen(PORT, ()=>{
+    console.log('Server running on localhst '+PORT)
 })

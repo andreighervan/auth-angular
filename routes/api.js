@@ -5,7 +5,7 @@ const User = require('../models/user');
 const mongoose = require('mongoose');
 const db = 'mongodb://andreigh:123QQsuccess@ds357955.mlab.com:57955/authng'
 
-mongoose.connect(db, err => {
+mongoose.connect(db, { useNewUrlParser: true }, err => {
     if (err) {
         console.log('Error ' + err)
     } else {
